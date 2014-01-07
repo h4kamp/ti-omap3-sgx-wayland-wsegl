@@ -650,7 +650,7 @@ static WSEGLError wseglSwapDrawable
        update_window.height = update_window.out_height = drawable->height;
        update_window.format = 0;
 
-       assert(ioctl(drawable->display->fd, OMAPFB_UPDATE_WINDOW, &update_window) == 0);
+       ioctl(drawable->display->fd, OMAPFB_UPDATE_WINDOW, &update_window);
     }
     
     drawable->currentBackBuffer   
